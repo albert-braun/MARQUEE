@@ -1,5 +1,7 @@
 # MARQUEE
 
+The guide is published at [albert-braun.github.io/MARQUEE](https://albert-braun.github.io/MARQUEE/).
+
 A guide to series and shows. The catalog comes from [TVMaze](https://www.tvmaze.com/api), a public API that does not need a key, so anyone who clones the project can open it.
 
 TVMaze stands in for TMDB for one reason: TMDB needs a personal key, and without it a portfolio demo does not start. The behavior is the same: a paged catalog, search, and a detail page.

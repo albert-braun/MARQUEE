@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FavoriteButton } from "@/components/favorite-button";
 import { Poster } from "@/components/poster";
 import { channelOf, excerpt, genreLabel, plainText, statusLabel, toSaved, yearOf } from "@/lib/present";
+import { showHref } from "@/lib/routes";
 import type { Show } from "@/lib/types";
 
 export function Featured({ show }: { show: Show }) {
@@ -18,7 +19,7 @@ export function Featured({ show }: { show: Show }) {
       <div>
         <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">Now showing</p>
         <h2 className="mt-2 font-display text-3xl leading-tight sm:text-4xl">
-          <Link href={`/show/${show.id}`} className="hover:text-gold">
+          <Link href={showHref(show.id)} className="hover:text-gold">
             {show.name}
           </Link>
         </h2>
@@ -36,7 +37,7 @@ export function Featured({ show }: { show: Show }) {
           </ul>
         ) : null}
         <div className="mt-5 flex items-center gap-3">
-          <Link href={`/show/${show.id}`} className="rounded-full bg-gold px-4 py-2 text-sm font-semibold text-stage">
+          <Link href={showHref(show.id)} className="rounded-full bg-gold px-4 py-2 text-sm font-semibold text-stage">
             Open title
           </Link>
           <FavoriteButton show={saved} />

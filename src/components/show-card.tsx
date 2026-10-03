@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FavoriteButton } from "@/components/favorite-button";
 import { Poster } from "@/components/poster";
 import { genreLabel, statusLabel, yearOf } from "@/lib/present";
+import { showHref } from "@/lib/routes";
 import type { SavedShow } from "@/lib/types";
 
 export function ShowCard({ show }: { show: SavedShow }) {
@@ -10,7 +11,7 @@ export function ShowCard({ show }: { show: SavedShow }) {
 
   return (
     <article className="group relative">
-      <Link href={`/show/${show.id}`} className="block rounded-lg focus-visible:outline-offset-4">
+      <Link href={showHref(show.id)} className="block rounded-lg focus-visible:outline-offset-4">
         <div className="relative aspect-[2/3] overflow-hidden rounded-lg bg-card-2">
           <Poster src={show.image} initial={show.name} sizes="(max-width: 640px) 45vw, 18vw" />
           <span className="pointer-events-none absolute bottom-2 left-2 z-10 rounded-full bg-stage/85 px-2 py-0.5 text-xs font-semibold text-gold tabular-nums">

@@ -58,6 +58,14 @@ export function ShowScreen({
     if (showQuery.data) remember(toSaved(showQuery.data));
   }, [remember, showQuery.data]);
 
+  useEffect(() => {
+    if (!showQuery.data) return;
+    document.title = `${showQuery.data.name} — MARQUEE`;
+    return () => {
+      document.title = "MARQUEE — a series guide";
+    };
+  }, [showQuery.data]);
+
   if (!valid) {
     return <Missing />;
   }

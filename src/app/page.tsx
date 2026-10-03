@@ -1,6 +1,6 @@
 import { Suspense } from "react";
-import { Browse } from "@/components/browse";
 import { GridSkeleton } from "@/components/grid-skeleton";
+import { HomeScreen } from "@/components/home-screen";
 
 export default function HomePage() {
   return (
@@ -11,7 +11,7 @@ export default function HomePage() {
         </div>
       }
     >
-      <Browse />
+      <HomeScreen />
     </Suspense>
   );
 }
