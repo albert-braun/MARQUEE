@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-unbounded), ui-sans-serif, system-ui, sans-serif;
+  --color-stage: #100e0c;
+  --color-ink: #f4efe6;
+  --color-muted: #b3a89a;
+  --color-line: rgba(244, 239, 230, 0.14);
+  --color-gold: #e7b656;
+  --color-ticket: #e25b45;
+  --color-card: #1b1814;
+  --color-card-2: #2a241c;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background:
+    radial-gradient(900px 420px at 8% -10%, rgba(231, 182, 86, 0.1), transparent 55%),
+    var(--color-stage);
+}
+
+::selection {
+  background: #e7b656;
+  color: #100e0c;
+}
+
+:focus-visible {
+  outline: 2px solid #e7b656;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 80;
+  border-radius: 999px;
+  background: #f4efe6;
+  color: #100e0c;
+  padding: 0.5rem 0.85rem;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.chip-row {
+  scrollbar-width: none;
+}
+
+.chip-row::-webkit-scrollbar {
+  display: none;
+}
+
+.bulb-row {
+  height: 8px;
+  background-image: radial-gradient(circle, #e7b656 1.4px, transparent 1.6px);
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: 18px 8px;
+  opacity: 0.72;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .poster-zoom {
+    transition: none;
+  }
+}
